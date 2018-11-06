@@ -14,7 +14,18 @@
 
 // CODE HERE...
 
+function callBinding(magicAnimals, updateAnimal, id) {
+  let trog = "Trogdor"
+  //   let animal = magicAnimals[id]
 
+  let animal = magicAnimals.filter((e, i, arr) => {
+    return (e.id = id)
+  })
+
+  let idk = animal[0]
+
+  return updateAnimal.call(idk, trog)
+}
 
 // *************
 // * PROBLEM 2 *
@@ -29,7 +40,24 @@
 
 // CODE HERE...
 
+function applyBinding(magicAnimals, updateAnimal, id) {
+  let arr = ["being majestic", "eating rainbows"]
+  let animal = magicAnimals.filter((e, i, arr) => {
+    return (e.id = id)
+  })
 
+  let idk = animal[0]
+
+  return updateAnimal.apply(idk, arr)
+
+  //   let update = updateAnimal(arr)
+
+  //   update.apply(animal)
+
+  //   return update(arr)
+
+  //   return updateAnimal(["being majestic", "eating rainbows"])
+}
 
 // *************
 // * PROBLEM 3 *
@@ -45,11 +73,9 @@
 // After the timeout is completed, the promise should be resolved with the new updated foo variable.
 // NOTE: Manually invoking your function here will alter the 'foo' variable before tests run, causing them to fail.
 
-var foo;
+var foo
 
 // CODE HERE...
-
-
 
 // *************
 // * PROBLEM 4 *
